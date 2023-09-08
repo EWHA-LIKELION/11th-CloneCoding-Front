@@ -57,7 +57,7 @@ export default TopBar;
 const Wrapper = styled.div`
   display: flex;
   margin: auto;
-  padding: 5px;
+  padding: 5px 5px 10px 5px;
   gap: 80px;
 `;
 
@@ -157,7 +157,7 @@ const ChatBtn = styled.button`
   font-weight: 600;
   color: #212124;
   &:hover {
-    background-color: #e2e2e2;
+    background-color: #f2f3f6;
     color: #7a7d87;
   }
 `;
