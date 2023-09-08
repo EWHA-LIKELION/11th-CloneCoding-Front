@@ -9,6 +9,7 @@ const MainPage = () => {
   return (
     <Wrapper>
       <TopBar />
+      <Banner />
     </Wrapper>
   );
 };
