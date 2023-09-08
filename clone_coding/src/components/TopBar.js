@@ -7,10 +7,12 @@ import delBtn from "../assets/icons/delete.svg";
 const TopBar = () => {
   const [text, setText] = useState("");
 
+  //검색창 검색어 저장 함수
   const onChange = (e) => {
     setText(e.target.value);
   };
 
+  //검색창 검색어 삭제 함수
   const deleteText = () => {
     setText("");
   };
