@@ -57,7 +57,7 @@ export default TopBar;
 const Wrapper = styled.div`
   display: flex;
   margin: auto;
-  padding: 5px 5px 10px 5px;
+  padding: 10px;
   gap: 80px;
 `;
 
