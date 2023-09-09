@@ -7,8 +7,12 @@ import testImg from "../assets/images/test.jpg";
 const ItemBox = () => {
   const navigate = useNavigate();
 
+  const goDetail = () => {
+    navigate("/detail");
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onClick={goDetail}>
       <ItemImage src={testImg} />
       <ItemInfo>
         <span id="title">베트남 동 판매합니다.</span>
