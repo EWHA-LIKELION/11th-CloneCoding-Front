@@ -12,7 +12,13 @@ const MainPage = () => {
       <Banner />
       <ItemList>
         <span>중고거래 인기매물</span>
-        <List></List>
+        <List>
+          <ItemBox />
+          <ItemBox />
+          <ItemBox />
+          <ItemBox />
+          <ItemBox />
+        </List>
       </ItemList>
     </Wrapper>
   );
@@ -28,6 +34,7 @@ const Wrapper = styled.div`
 
 const ItemList = styled.div`
   padding-top: 70px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,10 +43,12 @@ const ItemList = styled.div`
     font-size: 34px;
     font-weight: 600;
     color: #212529;
+    margin-bottom: 40px;
   }
 `;
 
 const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
 `;
