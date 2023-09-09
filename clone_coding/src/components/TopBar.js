@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: auto;
   padding: 10px;
-  gap: 80px;
+  gap: 130px;
 `;
 
 const Container_Left = styled.div`

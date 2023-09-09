@@ -50,5 +50,5 @@ const ItemList = styled.div`
 const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 15px;
+  grid-column-gap: 45px;
 `;
