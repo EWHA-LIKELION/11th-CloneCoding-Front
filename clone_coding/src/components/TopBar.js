@@ -84,6 +84,7 @@ const Logo = styled.div`
     font-family: pretendard;
     font-weight: 800;
     font-size: 24px;
+    letter-spacing: -2px;
     color: #ff6f0f;
   }
 `;
