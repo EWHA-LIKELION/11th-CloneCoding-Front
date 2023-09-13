@@ -100,6 +100,7 @@ const BtnBox = styled.div`
     font-size: 20px;
     font-weight: 700;
     color: #4d5159;
+    cursor: pointer;
 
     &:hover {
       color: #7a7d87;
@@ -157,6 +158,7 @@ const ChatBtn = styled.button`
   font-size: 16px;
   font-weight: 600;
   color: #212124;
+  cursor: pointer;
   &:hover {
     background-color: #f2f3f6;
     color: #7a7d87;

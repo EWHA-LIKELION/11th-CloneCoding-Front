@@ -114,7 +114,7 @@ const MannerBox = styled.div`
 
 const ViewTemp = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 6px;
   img {
     width: 32px;
     height: 32px;
