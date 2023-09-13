@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import TopBar from "../components/TopBar";
 import ImageBox from "../components/ImageBox";
 import profile from "../assets/icons/profile.png";
+import midTemp from "../assets/icons/midTemp.png";
 
 const DetailPage = () => {
   return (
@@ -18,7 +19,20 @@ const DetailPage = () => {
             <span id="place">관악구 성현동</span>
           </ProfileInfo>
         </Profile>
-        <MannerBox></MannerBox>
+        <MannerBox>
+          <ViewTemp>
+            <Temperature>
+              <span>41.9 °C</span>
+              <TempBar>
+                <div id="bar">
+                  <div id="current"></div>
+                </div>
+              </TempBar>
+            </Temperature>
+            <img src={midTemp} />
+          </ViewTemp>
+          <span>매너온도</span>
+        </MannerBox>
       </ProfileBox>
       <Content>
         <ItemInfo>
@@ -52,7 +66,7 @@ const ProfileBox = styled.div`
   width: 660px;
   display: flex;
   justify-content: space-between;
-  padding: 30px 0px;
+  padding: 30px 0px 15px 0px;
 `;
 
 const Profile = styled.div`
@@ -69,7 +83,7 @@ const Profile = styled.div`
 const ProfileInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   #username {
     font-family: pretendard;
     font-size: 16px;
@@ -84,7 +98,60 @@ const ProfileInfo = styled.div`
   }
 `;
 
-const MannerBox = styled.div``;
+const MannerBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  span {
+    padding-top: 2px;
+    font-family: pretendard;
+    font-size: 14px;
+    font-weight: 300;
+    color: #868e96;
+  }
+`;
+
+const ViewTemp = styled.div`
+  display: flex;
+  gap: 10px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+const TempBar = styled.div`
+  #bar {
+    position: relative;
+    width: 100px;
+    height: 4px;
+    align-self: stretch;
+    border-radius: 4px;
+    background: #eceaea;
+  }
+  #current {
+    position: absolute;
+    width: 41px;
+    height: 4px;
+    border-radius: 4px;
+    background: #319e45;
+    z-index: 10;
+  }
+`;
+
+const Temperature = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  span {
+    font-family: pretendard;
+    font-size: 16px;
+    font-weight: 700;
+    color: #319e45;
+  }
+`;
 
 const Content = styled.div`
   width: 660px;
