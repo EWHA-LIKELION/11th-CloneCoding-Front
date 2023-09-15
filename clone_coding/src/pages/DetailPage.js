@@ -11,6 +11,9 @@ const DetailPage = () => {
   const location = useLocation();
   const itemData = location.state.itemData;
 
+  //place 내용 변경
+  const place = itemData.place.split(" ").splice(1);
+
   return (
     <Wrapper>
       <TopBar />
@@ -20,7 +23,11 @@ const DetailPage = () => {
           <img src={profile} />
           <ProfileInfo>
             <span id="username">{itemData.username}</span>
-            <span id="place">{itemData.place}</span>
+            <div id="place">
+              {place.map((word, index) => (
+                <span id="place">{word}</span>
+              ))}
+            </div>
           </ProfileInfo>
         </Profile>
         <MannerBox>
@@ -98,6 +105,8 @@ const ProfileInfo = styled.div`
     color: #212124;
   }
   #place {
+    display: flex;
+    gap: 5px;
     font-family: pretendard;
     font-size: 14px;
     font-weight: 300;
