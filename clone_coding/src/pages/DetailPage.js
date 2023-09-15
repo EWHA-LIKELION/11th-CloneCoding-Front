@@ -46,7 +46,12 @@ const DetailPage = () => {
           </span>
           <span id="price">{itemData.price}원</span>
         </ItemInfo>
-        <Description>{itemData.content}</Description>
+        <Description>
+          {itemData.content &&
+            itemData.content
+              .split("<br/>")
+              .map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+        </Description>
         <Interest>
           관심 {itemData.likes} · 채팅 {itemData.chats} · 조회 {itemData.views}
         </Interest>
@@ -193,6 +198,9 @@ const ItemInfo = styled.div`
 const Description = styled.div`
   line-height: 160%;
   letter-spacing: -0.4px;
+  p {
+    margin: 2px 0px;
+  }
 `;
 
 const Interest = styled.div`
