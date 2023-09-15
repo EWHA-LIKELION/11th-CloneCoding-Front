@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import TopBar from "../components/TopBar";
 import Banner from "../components/Banner";
 import ItemBox from "../components/ItemBox";
+import itemData from "../database/itemData";
 
 const MainPage = () => {
   return (
@@ -13,11 +14,9 @@ const MainPage = () => {
       <ItemList>
         <span>중고거래 인기매물</span>
         <List>
-          <ItemBox />
-          <ItemBox />
-          <ItemBox />
-          <ItemBox />
-          <ItemBox />
+          {itemData.map((item) => (
+            <ItemBox id={item.id} itemData={item} />
+          ))}
         </List>
       </ItemList>
     </Wrapper>

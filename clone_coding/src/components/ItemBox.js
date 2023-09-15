@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import testImg from "../assets/images/test.jpg";
 
-const ItemBox = () => {
+const ItemBox = ({ id, itemData }) => {
   const navigate = useNavigate();
 
   const goDetail = () => {
@@ -13,12 +13,14 @@ const ItemBox = () => {
 
   return (
     <Wrapper onClick={goDetail}>
-      <ItemImage src={testImg} />
+      <ItemImage src={itemData.images[0]} />
       <ItemInfo>
-        <span id="title">베트남 동 판매합니다.</span>
-        <span id="price">688,000원</span>
-        <span id="place">서울 관악구 성현동</span>
-        <span id="like">관심 3 · 채팅 19</span>
+        <span id="title">{itemData.title}</span>
+        <span id="price">{itemData.price}원</span>
+        <span id="place">{itemData.place}</span>
+        <span id="like">
+          관심 {itemData.likes} · 채팅 {itemData.chats}
+        </span>
       </ItemInfo>
     </Wrapper>
   );

@@ -95,7 +95,7 @@ import item30_1 from "../assets/images/item30_1.webp";
 import item30_2 from "../assets/images/item30_2.webp";
 import item30_3 from "../assets/images/item30_3.webp";
 
-const ITEMDATA = [
+const itemData = [
   {
     id: 1,
     username: "흐이",
@@ -574,4 +574,4 @@ const ITEMDATA = [
   },
 ];
 
-export default ITEMDATA;
+export default itemData;
