@@ -5,13 +5,13 @@ import testImg from "../assets/images/test.jpg";
 import before from "../assets/icons/before.svg";
 import next from "../assets/icons/next.svg";
 
-const ImageBox = () => {
+const ImageBox = ({ id, images }) => {
   return (
     <Wrapper>
       <BeforeBtn>
         <img src={before} />
       </BeforeBtn>
-      <Image src={testImg} />
+      <Image src={images[0]} />
       <NextBtn>
         <img src={next} />
       </NextBtn>

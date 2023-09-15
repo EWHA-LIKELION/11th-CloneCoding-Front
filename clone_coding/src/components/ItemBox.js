@@ -8,7 +8,7 @@ const ItemBox = ({ id, itemData }) => {
   const navigate = useNavigate();
 
   const goDetail = () => {
-    navigate("/detail");
+    navigate("/detail", { state: { itemData: itemData } });
   };
 
   return (

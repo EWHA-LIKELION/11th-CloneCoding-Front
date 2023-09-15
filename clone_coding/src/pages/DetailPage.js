@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 
 import TopBar from "../components/TopBar";
@@ -7,22 +8,25 @@ import profile from "../assets/icons/profile.png";
 import midTemp from "../assets/icons/midTemp.png";
 
 const DetailPage = () => {
+  const location = useLocation();
+  const itemData = location.state.itemData;
+
   return (
     <Wrapper>
       <TopBar />
-      <ImageBox />
+      <ImageBox id={itemData.id} images={itemData.images} />
       <ProfileBox>
         <Profile>
           <img src={profile} />
           <ProfileInfo>
-            <span id="username">닉네임없어요</span>
-            <span id="place">관악구 성현동</span>
+            <span id="username">{itemData.username}</span>
+            <span id="place">{itemData.place}</span>
           </ProfileInfo>
         </Profile>
         <MannerBox>
           <ViewTemp>
             <Temperature>
-              <span>41.9 °C</span>
+              <span>{itemData.temp} °C</span>
               <TempBar>
                 <div id="bar">
                   <div id="current"></div>
@@ -36,18 +40,16 @@ const DetailPage = () => {
       </ProfileBox>
       <Content>
         <ItemInfo>
-          <span id="title">베트남 동 판매합니다.</span>
-          <span id="category">티켓/교환권 · 6일 전</span>
-          <span id="price">688,000원</span>
+          <span id="title">{itemData.title}</span>
+          <span id="category">
+            {itemData.category} · {itemData.date}
+          </span>
+          <span id="price">{itemData.price}원</span>
         </ItemInfo>
-        <Description>
-          베트남 여행 후 남은 동 일괄판매 합니다. <br />
-          12,520,000동 <br />
-          688,000원 지금 네이버 시세 사진도 게시 하였습니다. <br />
-          장소는 관악구 어디든 좋습니다. <br />
-          시간은 평일 13시~16시 입니다.
-        </Description>
-        <Interest>관심 3 · 채팅 19 · 조회 1277</Interest>
+        <Description>{itemData.content}</Description>
+        <Interest>
+          관심 {itemData.likes} · 채팅 {itemData.chats} · 조회 {itemData.views}
+        </Interest>
       </Content>
     </Wrapper>
   );
