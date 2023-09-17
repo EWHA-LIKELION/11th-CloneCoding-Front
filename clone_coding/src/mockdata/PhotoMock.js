@@ -8,4 +8,35 @@ import img7 from "../assets/products/img7.jpg";
 import img8 from "../assets/products/img8.jpg";
 import img9 from "../assets/products/img9.jpg";
 
-export const PhotoMock = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+export const PhotoMock = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img9, // 10
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9, // 20
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+  img9,
+];

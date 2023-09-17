@@ -41,20 +41,6 @@ const Wrapper = styled.div`
     width: 20px;
     height: 20px;
   }
-
-  input {
-    width: 320px;
-    height: 33px;
-    background-color: #f2f3f6;
-    padding: 9px 12px;
-    margin: 16px 0px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 19px;
-    color: lightgray;
-    text-align: center;
-  }
 `;
 
 const Category = styled.div`
@@ -82,6 +68,20 @@ const RightSide = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  input {
+    width: 320px;
+    height: 33px;
+    background-color: #f2f3f6;
+    padding: 9px 12px;
+    margin: 16px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 19px;
+    color: lightgray;
+    text-align: center;
+  }
 `;
 
 const Chatting = styled.div`

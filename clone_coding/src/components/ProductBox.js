@@ -1,40 +1,43 @@
 import { PhotoMock } from "../mockdata/PhotoMock";
 import { ContentMock } from "../mockdata/ContentMock";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ProductBox = () => {
   return (
     <ProductGrid>
-      {PhotoMock.map((photo, index) => (
-        <div key={index}>
-          <img src={photo} alt={`Image ${index}`} />
-          <Text>
-            <p style={{ fontSize: "19px" }}>{ContentMock[index].title}</p>
-            <p
-              style={{
-                fontSize: "19px",
-                fontWeight: "700",
-                marginTop: "-10px",
-              }}
-            >
-              {ContentMock[index].price}원
-            </p>
-            <p
-              style={{
-                fontSize: "16px",
-                marginTop: "-10px",
-                marginBottom: "10px",
-              }}
-            >
-              {ContentMock[index].address}
-            </p>
-            <span style={{ fontSize: "16px" }}>
-              관심 {ContentMock[index].likes} ·
-            </span>
-            <span style={{ fontSize: "16px", marginLeft: "5px" }}>
-              채팅 {ContentMock[index].chats}
-            </span>
-          </Text>
+      {PhotoMock.map((photo, id) => (
+        <div key={id}>
+          <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
+            <img src={photo} alt={`Image ${id}`} />
+            <Text>
+              <p style={{ fontSize: "19px" }}>{ContentMock[id].title}</p>
+              <p
+                style={{
+                  fontSize: "19px",
+                  fontWeight: "700",
+                  marginTop: "-10px",
+                }}
+              >
+                {ContentMock[id].price}원
+              </p>
+              <p
+                style={{
+                  fontSize: "16px",
+                  marginTop: "-10px",
+                  marginBottom: "10px",
+                }}
+              >
+                {ContentMock[id].address}
+              </p>
+              <span style={{ fontSize: "16px" }}>
+                관심 {ContentMock[id].likes} ·
+              </span>
+              <span style={{ fontSize: "16px", marginLeft: "5px" }}>
+                채팅 {ContentMock[id].chats}
+              </span>
+            </Text>
+          </Link>
         </div>
       ))}
     </ProductGrid>
