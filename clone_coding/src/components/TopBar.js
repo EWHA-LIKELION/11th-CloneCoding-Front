@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 import logo from "../assets/icons/logo.jpg";
 import delBtn from "../assets/icons/delete.svg";
 
 const TopBar = () => {
+  const navigate = useNavigate();
   const [text, setText] = useState("");
 
   //검색창 검색어 저장 함수
@@ -17,6 +19,11 @@ const TopBar = () => {
     setText("");
   };
 
+  //메인페이지 이동 함수
+  const goMain = () => {
+    navigate("/");
+  };
+
   return (
     <Wrapper>
       <Container_Left>
@@ -25,7 +32,9 @@ const TopBar = () => {
           <span>당근</span>
         </Logo>
         <BtnBox>
-          <button id="clicked">중고거래</button>
+          <button id="clicked" onClick={goMain}>
+            중고거래
+          </button>
           <button>동네가게</button>
           <button>알바</button>
           <button>부동산 직거래</button>
