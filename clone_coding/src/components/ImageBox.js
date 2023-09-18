@@ -22,7 +22,7 @@ const ImageBox = ({ id, images }) => {
 export default ImageBox;
 
 const Wrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 80px;
   display: flex;
   align-items: center;
 `;

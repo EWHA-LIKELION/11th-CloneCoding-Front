@@ -55,10 +55,15 @@ const TopBar = () => {
 export default TopBar;
 
 const Wrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
   display: flex;
+  justify-content: center;
   margin: auto;
   padding: 10px;
-  gap: 130px;
+  gap: 120px;
 `;
 
 const Container_Left = styled.div`
