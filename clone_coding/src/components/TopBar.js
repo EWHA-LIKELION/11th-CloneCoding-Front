@@ -1,13 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 import logo from "../assets/icons/logo.jpg";
 import delBtn from "../assets/icons/delete.svg";
+import search from "../assets/icons/search.svg";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const [text, setText] = useState("");
+  const [showSearchButton, setShowSearchButton] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1200) {
+        setShowSearchButton(false);
+      } else {
+        setShowSearchButton(true);
+      }
+    };
+
+    //페이지의 창 크기의 변경을 감지
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // 컴포넌트가 언마운트될 때 이벤트 리스너를 정리
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   //검색창 검색어 저장 함수
   const onChange = (e) => {
@@ -42,19 +63,25 @@ const TopBar = () => {
         </BtnBox>
       </Container_Left>
       <Container_Right>
-        <InputContainer>
-          <SearchBox
-            type="text"
-            placeholder="물품이나 동네를 검색해보세요"
-            onChange={onChange}
-            value={text}
-          />
-          {text && (
-            <DeleteBtn onClick={deleteText}>
-              <img src={delBtn} alt="검색어 삭제 버튼" />
-            </DeleteBtn>
-          )}
-        </InputContainer>
+        {showSearchButton ? (
+          <InputContainer>
+            <SearchBox
+              type="text"
+              placeholder="물품이나 동네를 검색해보세요"
+              onChange={onChange}
+              value={text}
+            />
+            {text && (
+              <DeleteBtn onClick={deleteText}>
+                <img src={delBtn} alt="검색어 삭제 버튼" />
+              </DeleteBtn>
+            )}
+          </InputContainer>
+        ) : (
+          <SearchBtn>
+            <img src={search} alt="검색 이미지" />
+          </SearchBtn>
+        )}
         <ChatBtn>채팅하기</ChatBtn>
       </Container_Right>
     </Wrapper>
@@ -130,6 +157,9 @@ const InputContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const SearchBox = styled.input`
@@ -176,5 +206,15 @@ const ChatBtn = styled.button`
   &:hover {
     background-color: #f2f3f6;
     color: #7a7d87;
+  }
+`;
+
+const SearchBtn = styled.div`
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    align-items: center;
+    img {
+      width: 20px;
+    }
   }
 `;

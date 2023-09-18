@@ -22,7 +22,7 @@ export default Banner;
 
 const Wrapper = styled.div`
   height: 315px;
-  margin-top: 50px;
+  margin-top: 70px;
   background-color: #fff1aa;
   display: flex;
   align-items: center;
