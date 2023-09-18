@@ -87,10 +87,12 @@ const ProductImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 45%;
+  height: 30%;
   img {
-    width: 850px;
-    height: 750px;
+    width: 100%;
     border-radius: 15px;
+    object-fit: cover;
   }
 `;
 

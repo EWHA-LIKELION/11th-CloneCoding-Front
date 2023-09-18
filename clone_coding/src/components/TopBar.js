@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   gap: 100px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 
   .logo-img {
     width: 80px;
