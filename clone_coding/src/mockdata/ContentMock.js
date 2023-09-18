@@ -11,6 +11,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 1,
@@ -24,6 +25,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규규",
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "ㅇㅇ",
   },
   {
     id: 3,
@@ -50,6 +53,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "예",
   },
   {
     id: 4,
@@ -63,6 +67,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 5,
@@ -76,6 +81,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 6,
@@ -89,6 +95,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 7,
@@ -102,6 +109,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 8,
@@ -115,6 +123,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 9,
@@ -128,6 +137,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 10,
@@ -141,6 +151,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 11,
@@ -154,6 +165,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 12,
@@ -167,6 +179,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 13,
@@ -180,6 +193,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 14,
@@ -193,6 +207,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 15,
@@ -206,6 +221,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 16,
@@ -219,6 +235,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 17,
@@ -232,6 +249,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 18,
@@ -245,6 +263,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 19,
@@ -258,6 +277,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 20,
@@ -271,6 +291,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 21,
@@ -284,6 +305,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 22,
@@ -297,6 +319,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 23,
@@ -310,6 +333,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 24,
@@ -323,6 +347,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 25,
@@ -336,6 +361,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 26,
@@ -349,6 +375,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 27,
@@ -362,6 +389,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 28,
@@ -375,6 +403,7 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
   {
     id: 29,
@@ -388,5 +417,6 @@ export const ContentMock = [
     time: "2일 전",
     views: "200",
     explain: "연락주쇼",
+    username: "규빈",
   },
 ];
