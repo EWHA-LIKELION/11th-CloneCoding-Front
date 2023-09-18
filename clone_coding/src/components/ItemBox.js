@@ -51,6 +51,10 @@ const ItemInfo = styled.div`
     font-weight: 300;
     color: #212124;
     margin-bottom: 6px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   #price {
     font-family: pretendard;
