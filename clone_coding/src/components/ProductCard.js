@@ -1,16 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 //mock data
-import productImg from "../images/productImg.png";
+import p1 from "../images/p1.png";
 
 const ProductCard = (props) => {
     const { productData } = props;
 
+    const navigate = useNavigate();
+    const gotoDetail = () => {
+        navigate("/detailpage");
+    };
+
     return (
         <>
             <Wrapper>
-                <img src={productImg} />
+                <img onClick={gotoDetail} src={p1} />
                 <div className="name">{productData.name}</div>
                 <div className="price">{productData.price}</div>
                 <div className="place">{productData.place}</div>
