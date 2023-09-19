@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
+import PopularProduct from "../components/PopularProduct";
 
 import p1 from "../images/p1.png";
 import { FaChevronLeft } from "react-icons/fa";
@@ -64,6 +65,7 @@ const DetailPage = () => {
                     </div>
                     <hr />
                 </ProductInfo>
+                <PopularProduct />
             </Wrapper>
         </>
     );
