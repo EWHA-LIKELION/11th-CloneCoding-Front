@@ -100,6 +100,7 @@ const Wrapper = styled.div`
   margin: auto;
   padding: 10px;
   gap: 120px;
+  z-index: 999;
 `;
 
 const Container_Left = styled.div`

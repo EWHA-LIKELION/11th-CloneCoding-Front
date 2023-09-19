@@ -5,7 +5,11 @@ import { styled } from "styled-components";
 import TopBar from "../components/TopBar";
 import ImageBox from "../components/ImageBox";
 import profile from "../assets/icons/profile.png";
+import lowTemp from "../assets/icons/lowTemp.png";
+import basicTemp from "../assets/icons/basicTemp.png";
 import midTemp from "../assets/icons/midTemp.png";
+import highTemp from "../assets/icons/highTemp.png";
+import moreHighTemp from "../assets/icons/moreHighTemp.png";
 
 const DetailPage = () => {
   const location = useLocation();
@@ -13,6 +17,36 @@ const DetailPage = () => {
 
   //place 내용 변경
   const place = itemData.place.split(" ").splice(1);
+
+  //매너온도에 따른 색상 변화 함수
+  const tempColor = (temp) => {
+    if (temp <= 36.2) {
+      return "#0d3a65";
+    } else if (temp <= 37.5) {
+      return "#1561a9";
+    } else if (temp <= 42) {
+      return "#319e45";
+    } else if (temp <= 52) {
+      return "#df9100";
+    } else {
+      return "#de5d06";
+    }
+  };
+
+  //매너온도에 따른 아이콘 변화 함수
+  const tempImage = (temp) => {
+    if (temp <= 36.2) {
+      return lowTemp;
+    } else if (temp <= 37.5) {
+      return basicTemp;
+    } else if (temp <= 42) {
+      return midTemp;
+    } else if (temp <= 52) {
+      return highTemp;
+    } else {
+      return moreHighTemp;
+    }
+  };
 
   return (
     <Wrapper>
@@ -33,14 +67,19 @@ const DetailPage = () => {
         <MannerBox>
           <ViewTemp>
             <Temperature>
-              <span>{itemData.temp} °C</span>
+              <span style={{ color: tempColor(itemData.temp) }}>
+                {itemData.temp} °C
+              </span>
               <TempBar>
                 <div id="bar">
-                  <div id="current"></div>
+                  <div
+                    id="current"
+                    style={{ background: tempColor(itemData.temp) }}
+                  ></div>
                 </div>
               </TempBar>
             </Temperature>
-            <img src={midTemp} />
+            <img src={tempImage(itemData.temp)} />
           </ViewTemp>
           <span>매너온도</span>
         </MannerBox>
@@ -151,7 +190,6 @@ const TempBar = styled.div`
     width: 41px;
     height: 4px;
     border-radius: 4px;
-    background: #319e45;
     z-index: 10;
   }
 `;
@@ -165,7 +203,6 @@ const Temperature = styled.div`
     font-family: pretendard;
     font-size: 16px;
     font-weight: 700;
-    color: #319e45;
   }
 `;
 

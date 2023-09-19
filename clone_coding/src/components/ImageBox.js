@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 
-import testImg from "../assets/images/test.jpg";
 import before from "../assets/icons/before.svg";
 import next from "../assets/icons/next.svg";
 
 const ImageBox = ({ id, images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  //다음 이미지로 전환
+  const nextClick = () => {};
+
+  //이전 이미지로 전환
+  const beforeClick = () => {};
+
   return (
     <Wrapper>
-      <BeforeBtn>
+      <BeforeBtn onClick={beforeClick}>
         <img src={before} />
       </BeforeBtn>
-      <Image src={images[0]} />
-      <NextBtn>
+      <ImageSlider>
+        {images.map((image) => (
+          <Image src={image} />
+        ))}
+      </ImageSlider>
+
+      <ImageCnt></ImageCnt>
+      <NextBtn onClick={nextClick}>
         <img src={next} />
       </NextBtn>
     </Wrapper>
@@ -29,18 +42,45 @@ const Wrapper = styled.div`
 
 const BeforeBtn = styled.div`
   height: 25px;
+  margin-right: 15px;
   cursor: pointer;
 `;
 
-const Image = styled.img`
-  margin: 0px 15px;
+const ImageSlider = styled.div`
   width: 660px;
   height: 500px;
   border-radius: 10px;
+  overflow: hidden;
+`;
+
+const Image = styled.img`
+  position: relative;
+  border-radius: 10px;
+  width: 660px;
+  height: 500px;
+  float: left;
   object-fit: cover;
+`;
+
+const ImageCnt = styled.div`
+  position: absolute;
+  bottom: 10px;
+  margin: auto;
+  display: flex;
+  button {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.3;
+    &.active {
+      opacity: 1;
+    }
+  }
 `;
 
 const NextBtn = styled.div`
   height: 25px;
+  margin-left: 15px;
   cursor: pointer;
 `;
