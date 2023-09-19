@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const Banner = styled.div`
   margin-top: 56px;
   width: 101.1167793273925%;

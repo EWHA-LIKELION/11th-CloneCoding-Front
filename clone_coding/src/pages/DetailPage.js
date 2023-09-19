@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import TopBar from "../components/TopBar";
 import { useParams } from "react-router-dom";
 import { PhotoMock } from "../mockdata/PhotoMock";
 import { ProfileMock } from "../mockdata/ProfileMock";
 import { ContentMock } from "../mockdata/ContentMock";
+import HotItem from "../components/HotItem";
 import styled from "styled-components";
+
+import GoLeft from "../assets/icons/GoLeft.png";
+import GoRight from "../assets/icons/GoRight.png";
 
 const DetailPage = () => {
   const { id } = useParams();
 
-  // id를 기반으로 해당 상품의 정보를 가져옵니다.
   const productInfo = ContentMock.find(
     (product) => product.id === parseInt(id)
   );
 
   if (!productInfo) {
-    return <div>상품을 찾을 수 없습니다.</div>;
+    return <div>상품을 찾을 수 없습니다</div>;
   }
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goNext = () => {
+    if (currentIndex < PhotoMock.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const goBack = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   // 매너 온도에 따른 색상 변화
   function getTempColor(temp) {
@@ -33,13 +50,15 @@ const DetailPage = () => {
     }
   }
 
-  const color = getTempColor(productInfo.temp);
+  const TempColor = getTempColor(productInfo.temp);
 
   return (
     <Wrapper>
       <TopBar />
-      <ProductImg>
+      <ProductImg style={{ gap: "15px" }}>
+        <img src={GoLeft} className="arrow" onClick={goBack} />
         <img src={PhotoMock[parseInt(id)]} alt={`Image ${id}`} />
+        <img src={GoRight} className="arrow" onClick={goNext} />
       </ProductImg>
       <ContentTop>
         <Profile>
@@ -49,20 +68,54 @@ const DetailPage = () => {
             <p id="address">{productInfo.address}</p>
           </div>
         </Profile>
-        <MannerTemp>
-          <div>
-            <p>{productInfo.temp}</p>
+        <Manner>
+          <Temp>
+            <div>
+              <p
+                style={{
+                  color: TempColor,
+                  fontSize: "16px",
+                  fontWeight: "600",
+                  textAlign: "right",
+                  marginBottom: "7px",
+                }}
+              >
+                {productInfo.temp} °C
+              </p>
+              <div
+                style={{
+                  width: "100px",
+                  height: "4px",
+                  backgroundColor: "#e9ecef",
+                  borderRadius: "5px",
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              />
+              <div
+                style={{
+                  width: `${((productInfo.temp - 0) / (100 - 0)) * 100}%`,
+                  height: "4px",
+                  backgroundColor: TempColor,
+                  borderRadius: "5px",
+                  position: "relative",
+                  zIndex: 2,
+                  top: "-4px",
+                }}
+              />
+            </div>
             <div
               style={{
-                backgroundColor: color,
                 width: "24px",
                 height: "24px",
+                border: `2px solid ${TempColor}`,
                 borderRadius: "100%",
+                marginTop: "10px",
               }}
             />
-            <p>매너온도</p>
-          </div>
-        </MannerTemp>
+          </Temp>
+          <p style={{ textAlign: "right" }}>매너온도</p>
+        </Manner>
       </ContentTop>
       <div
         style={{
@@ -98,10 +151,13 @@ const DetailPage = () => {
           borderBottom: "1px solid lightGray",
         }}
       ></div>
-      <HotItems>
+      <HotItemText>
         <span id="left">당근 인기중고</span>
         <span id="right">더 구경하기</span>
-      </HotItems>
+      </HotItemText>
+      <HotItemGrid>
+        <HotItem />
+      </HotItemGrid>
     </Wrapper>
   );
 };
@@ -114,6 +170,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
 const ProductImg = styled.div`
   display: flex;
   justify-content: center;
@@ -121,12 +178,18 @@ const ProductImg = styled.div`
   width: 45%;
   height: 30%;
   margin-top: 80px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 
   img {
     width: 100%;
     border-radius: 15px;
     object-fit: cover;
+  }
+
+  .arrow {
+    width: 11px;
+    height: 21px;
+    cursor: pointer;
   }
 `;
 
@@ -136,7 +199,7 @@ const ContentTop = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 `;
 
 const Profile = styled.div`
@@ -165,9 +228,18 @@ const Profile = styled.div`
   }
 `;
 
-const MannerTemp = styled.div`
+const Manner = styled.div`
   font-size: 12px;
   color: #868e96;
+`;
+
+const Temp = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: -7px;
 `;
 
 const ContentBottom = styled.div`
@@ -201,11 +273,12 @@ const ContentBottom = styled.div`
     color: #868e96;
   }
 `;
-const HotItems = styled.div`
+const HotItemText = styled.div`
   width: 45%;
   margin-top: 32px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 
   #left {
     font-size: 18px;
@@ -218,3 +291,5 @@ const HotItems = styled.div`
     color: #ff8a3d;
   }
 `;
+
+const HotItemGrid = styled.div``;

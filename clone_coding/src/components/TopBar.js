@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   top: 0px;
   background-color: white;
   position: fixed;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   gap: 100px;
