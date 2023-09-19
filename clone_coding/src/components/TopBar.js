@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../assets/icons/Logo.png";
+import Delete from "../assets/icons/delete.svg";
 
 const TopBar = () => {
+  const [text, setText] = useState("");
+
+  const onChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const deleteText = () => {
+    setText("");
+  };
   return (
     <Wrapper>
       <img src={Logo} className="logo-img" />
@@ -14,7 +24,18 @@ const TopBar = () => {
         <span className="x">중고차 직거래</span>
       </Category>
       <RightSide>
-        <input type="text" placeholder="물품이나 동네를 검색해보세요" />
+        <Input
+          type="text"
+          placeholder="물품이나 동네를 검색해보세요"
+          onChange={onChange}
+          value={text}
+        />
+        {text && (
+          <DeleteBtn onClick={deleteText}>
+            <img src={Delete} alt="검색어 삭제 버튼" />
+          </DeleteBtn>
+        )}
+
         <Chatting>채팅하기</Chatting>
       </RightSide>
     </Wrapper>
@@ -32,13 +53,14 @@ const Wrapper = styled.div`
   z-index: 3;
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 50px;
   justify-content: center;
   align-items: center;
 
   .logo-img {
     width: 65px;
-    height: 32px;
+    height: 33px;
+    margin-bottom: 4px;
   }
 
   .search-img {
@@ -51,12 +73,14 @@ const Category = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 35px;
+  gap: 32px;
+  margin-left: -13px;
 
   .o {
     font-size: 18px;
     font-weight: 600;
     color: #ff6f0f;
+
     cursor: pointer;
   }
 
@@ -73,20 +97,38 @@ const RightSide = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  margin-left: 85px;
+`;
 
-  input {
-    width: 288px;
-    height: 25px;
-    background-color: #f2f3f6;
-    padding: 9px 12px;
-    margin: 16px 0px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 16px;
-    color: lightgray;
-    text-align: start;
+const Input = styled.input`
+  width: 265px;
+  height: 22px;
+  background-color: #f2f3f6;
+  padding: 9px 12px;
+  margin: 16px 0px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  color: #212529;
+  text-align: start;
+  cursor: pointer;
+`;
+
+const DeleteBtn = styled.div`
+  margin-left: -40px;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
   }
 `;
 

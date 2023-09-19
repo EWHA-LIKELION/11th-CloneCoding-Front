@@ -5,8 +5,9 @@ import { ContentMock } from "../mockdata/ContentMock";
 import { Link } from "react-router-dom";
 
 const HotItem = () => {
-  // PhotoMock 배열의 복사본 생성
-  const shuffledArray = [...PhotoMock];
+  const mainImg = PhotoMock.map((item) => item.mainImg);
+
+  const shuffledArray = [...mainImg];
 
   // 배열 랜덤하게 섞기
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -18,42 +19,44 @@ const HotItem = () => {
   const randomPhotos = shuffledArray.slice(0, 6);
 
   return (
-    <ProductGrid>
-      {randomPhotos.map((photo, id) => (
-        <div key={id} style={{ marginBottom: "20px" }}>
-          <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
-            <img src={photo} alt={`Image ${id}`} />
-            <Text>
-              <p style={{ fontSize: "16px" }}>{ContentMock[id].title}</p>
-              <p
-                style={{
-                  fontSize: "15px",
-                  fontWeight: "700",
-                  marginTop: "-7px",
-                }}
-              >
-                {ContentMock[id].price}원
-              </p>
-              <p
-                style={{
-                  fontSize: "13px",
-                  marginTop: "-7px",
-                  marginBottom: "5px",
-                }}
-              >
-                {ContentMock[id].address}
-              </p>
-              <span style={{ fontSize: "13px" }}>
-                관심 {ContentMock[id].likes} ·
-              </span>
-              <span style={{ fontSize: "13px", marginLeft: "5px" }}>
-                채팅 {ContentMock[id].chats}
-              </span>
-            </Text>
-          </Link>
-        </div>
-      ))}
-    </ProductGrid>
+    <Wrapper>
+      <ProductGrid>
+        {randomPhotos.map((photo, id) => (
+          <div key={id} style={{ marginBottom: "20px" }}>
+            <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
+              <img src={photo} alt={`Image ${id}`} />
+              <Text>
+                <p style={{ fontSize: "16px" }}>{ContentMock[id].title}</p>
+                <p
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "700",
+                    marginTop: "-7px",
+                  }}
+                >
+                  {ContentMock[id].price}원
+                </p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    marginTop: "-7px",
+                    marginBottom: "5px",
+                  }}
+                >
+                  {ContentMock[id].address}
+                </p>
+                <span style={{ fontSize: "13px" }}>
+                  관심 {ContentMock[id].likes} ·
+                </span>
+                <span style={{ fontSize: "13px", marginLeft: "5px" }}>
+                  채팅 {ContentMock[id].chats}
+                </span>
+              </Text>
+            </Link>
+          </div>
+        ))}
+      </ProductGrid>
+    </Wrapper>
   );
 };
 

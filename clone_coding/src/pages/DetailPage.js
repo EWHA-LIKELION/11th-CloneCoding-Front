@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TopBar from "../components/TopBar";
 import { useParams } from "react-router-dom";
 import { PhotoMock } from "../mockdata/PhotoMock";
@@ -11,7 +11,17 @@ import GoLeft from "../assets/icons/GoLeft.png";
 import GoRight from "../assets/icons/GoRight.png";
 
 const DetailPage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { id } = useParams();
+
+  // 스크롤 맨 위로
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, [id]);
 
   const productInfo = ContentMock.find(
     (product) => product.id === parseInt(id)
@@ -21,10 +31,8 @@ const DetailPage = () => {
     return <div>상품을 찾을 수 없습니다</div>;
   }
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const goNext = () => {
-    if (currentIndex < PhotoMock.length - 1) {
+    if (currentIndex < PhotoMock[parseInt(id)].moreImg.length) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -34,6 +42,11 @@ const DetailPage = () => {
       setCurrentIndex(currentIndex - 1);
     }
   };
+
+  const currentImg =
+    currentIndex === 0
+      ? PhotoMock[parseInt(id)].mainImg
+      : PhotoMock[parseInt(id)].moreImg[currentIndex - 1];
 
   // 매너 온도에 따른 색상 변화
   function getTempColor(temp) {
@@ -57,7 +70,7 @@ const DetailPage = () => {
       <TopBar />
       <ProductImg style={{ gap: "15px" }}>
         <img src={GoLeft} className="arrow" onClick={goBack} />
-        <img src={PhotoMock[parseInt(id)]} alt={`Image ${id}`} />
+        <img src={currentImg} alt={`Image ${id}`} />
         <img src={GoRight} className="arrow" onClick={goNext} />
       </ProductImg>
       <ContentTop>
