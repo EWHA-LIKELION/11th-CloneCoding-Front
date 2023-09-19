@@ -26,16 +26,18 @@ export default TopBar;
 const Wrapper = styled.div`
   width: 100%;
   height: 64px;
+  top: 0px;
+  background-color: white;
+  position: fixed;
   display: flex;
   flex-direction: row;
   gap: 100px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
 
   .logo-img {
-    width: 80px;
-    height: 40px;
+    width: 65px;
+    height: 32px;
   }
 
   .search-img {
@@ -51,15 +53,17 @@ const Category = styled.div`
   gap: 35px;
 
   .o {
-    font-size: 23px;
+    font-size: 18px;
     font-weight: 600;
     color: #ff6f0f;
+    cursor: pointer;
   }
 
   .x {
-    font-size: 23px;
+    font-size: 18px;
     font-weight: 600;
     color: #4d5159;
+    cursor: pointer;
   }
 `;
 
@@ -71,17 +75,17 @@ const RightSide = styled.div`
   gap: 20px;
 
   input {
-    width: 320px;
-    height: 33px;
+    width: 288px;
+    height: 25px;
     background-color: #f2f3f6;
     padding: 9px 12px;
     margin: 16px 0px;
     border: none;
     border-radius: 8px;
     outline: none;
-    font-size: 19px;
+    font-size: 16px;
     color: lightgray;
-    text-align: center;
+    text-align: start;
   }
 `;
 
@@ -89,13 +93,14 @@ const Chatting = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 50px;
+  width: 97.6px;
+  height: 40px;
   border-radius: 6px;
   border: 1px solid #ced4da;
   color: #212529;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   background-color: #fff;
   text-decoration: none;
+  cursor: pointer;
 `;

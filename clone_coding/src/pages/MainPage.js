@@ -32,11 +32,13 @@ export default MainPage;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 const Banner = styled.div`
-  width: 100%;
-  height: 395px;
+  margin-top: 56px;
+  width: 101.1167793273925%;
+  height: 315px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -45,8 +47,8 @@ const Banner = styled.div`
   gap: 70px;
 
   img {
-    width: 515px;
-    height: 395px;
+    width: auto;
+    height: 100%;
   }
 `;
 const BannerText = styled.div`
@@ -54,22 +56,27 @@ const BannerText = styled.div`
   margin-top: -80px;
 
   #text-up {
-    font-size: 43px;
+    font-size: 34px;
     font-weight: 700;
+    line-height: 150%;
+    margin-top: 40px;
   }
 
   #text-down {
-    font-size: 22px;
-    margin-top: -20px;
+    font-size: 18px;
+    margin-top: -16px;
   }
 `;
 const Title = styled.div`
-  font-size: 37px;
+  font-size: 32px;
   font-weight: 700;
-  margin-top: 70px;
+  margin-top: 60px;
+  margin-bottom: 20px;
   color: #212529;
 `;
 const Container = styled.div`
   width: 50%;
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
 `;
