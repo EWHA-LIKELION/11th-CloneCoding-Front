@@ -3,11 +3,21 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import PopularProduct from "../components/PopularProduct";
 
+import ProductCard from "../components/ProductCard";
+import productData from "../_mock/productData";
+
 import p1 from "../images/p1.png";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import profileImg from "../images/profileImg.png";
+
+//매너온도 이미지
+import t0 from "../images/t2.png";
 import t1 from "../images/t1.png";
+import t2 from "../images/t2.png";
+import t3 from "../images/t1.png";
+import t4 from "../images/t2.png";
+import t5 from "../images/t2.png";
 
 const DetailPage = () => {
     return (
@@ -19,12 +29,14 @@ const DetailPage = () => {
                         className="left"
                         size="25"
                         style={{ color: "#212529" }}
+                        hoverStyle={{ color: "#e6e6e6" }}
                     />
                     <img src={p1} />
                     <FaChevronRight
                         className="right"
                         size="25"
                         style={{ color: "#212529" }}
+                        hoverStyle={{ color: "#e6e6e6" }}
                     />
                 </PhotoWrapper>
                 <SellerInfo>
@@ -92,6 +104,12 @@ const PhotoWrapper = styled.div`
         border-radius: 20px;
     }
     margin-top: 80px;
+    .left:hover {
+        color: #e6e6e6;
+    }
+    .right:hover {
+        color: #e6e6e6;
+    }
 `;
 const SellerInfo = styled.div`
     width: 677px;
