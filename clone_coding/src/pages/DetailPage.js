@@ -46,9 +46,24 @@ const DetailPage = () => {
                         <img src={t1} width={30} height={30} />
                     </MannerWrapper>
                 </SellerInfo>
-                <Text>
+                <MannerText>
                     <div className="text">매너온도</div>
-                </Text>
+                </MannerText>
+                <ProductInfo>
+                    <hr />
+                    <div className="title">아내가 제 아이패드 팔아서</div>
+                    <div className="category">기타 중고물품 ∙ 3일전</div>
+                    <div className="price">700,000원</div>
+                    <div className="detail">
+                        진품은 맞고요 얼마인지는 모르겠고 아내가 제 아이패드
+                        마음대로 팔아서 저도 똑같이 샤넬백 팝니다. 다시
+                        돌려달라고 안할거고요 아내도요.
+                    </div>
+                    <div className="interest">
+                        관심 86 ∙ 채팅 105 ∙ 조회 3260
+                    </div>
+                    <hr />
+                </ProductInfo>
             </Wrapper>
         </>
     );
@@ -131,14 +146,49 @@ const MannerBar = styled.div`
         }
     }
 `;
-const Text = styled.div`
+const MannerText = styled.div`
     width: 677px;
     display: flex;
-
     justify-content: flex-end;
     margin-top: 5px;
     .text {
         font-size: 13px;
         color: #868e96;
+    }
+`;
+const ProductInfo = styled.div`
+    width: 677px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    hr {
+        width: 100%;
+        background-color: white;
+        color: white;
+    }
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 28px;
+    }
+    .category {
+        font-size: 13px;
+        color: #868e96;
+        margin-top: 5px;
+    }
+    .price {
+        font-size: 17px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+    .detail {
+        font-size: 17px;
+        margin-top: 15px;
+    }
+    .interest {
+        font-size: 13px;
+        color: #868e96;
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
 `;
