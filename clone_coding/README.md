@@ -1,18 +1,18 @@
 ## 11th CloneCoding Front
-<hr/>
+
 당근마켓 클론코딩
 
 ### 개발 기간
-<hr/>
+
 2023.09.10~2023.09.21
 
 ### 기술 스택
-<hr/>
+
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
 <img src="https://img.shields.io/badge/styled_components-DB7093?style=flat-square&logo=styled-components&logoColor=white" height="28px"/>
 
 ### 폴더 구조 및 페이지 구성
-<hr/>
+
 📂 public <br/>
 ⎪ └─ index.html <br/>
 📂 src <br/>
@@ -38,7 +38,7 @@
 
 
 ### 페이지 캡쳐
-<hr/>
+
 
 ### Installation
 ```
