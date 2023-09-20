@@ -13,21 +13,27 @@ const ImageBox = ({ id, images }) => {
   //이전 이미지로 전환
   const beforeClick = () => {};
 
+  //이미지가 1개일 경우 화살표 띄우지 않도록 조건 지정
+  const hideBtn = images.length === 1;
+
   return (
     <Wrapper>
-      <BeforeBtn onClick={beforeClick}>
-        <img src={before} />
-      </BeforeBtn>
+      {!hideBtn && (
+        <BeforeBtn onClick={beforeClick}>
+          <img src={before} />
+        </BeforeBtn>
+      )}
       <ImageSlider>
         {images.map((image) => (
           <Image src={image} />
         ))}
       </ImageSlider>
-
       <ImageCnt></ImageCnt>
-      <NextBtn onClick={nextClick}>
-        <img src={next} />
-      </NextBtn>
+      {!hideBtn && (
+        <NextBtn onClick={nextClick}>
+          <img src={next} />
+        </NextBtn>
+      )}
     </Wrapper>
   );
 };
