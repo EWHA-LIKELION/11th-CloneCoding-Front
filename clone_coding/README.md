@@ -14,8 +14,8 @@
 
 ### 기술 스택
 
-|JavaScript|React|Styled-Components|
-|----------|-----|-----------------|
+|    JavaScript   |       React     |Styled-Components|
+|-----------------|-----------------|-----------------|
 |<img src="https://w7.pngwing.com/pngs/172/554/png-transparent-javascript-html-computer-software-web-browser-watermark-angle-text-rectangle.png" height="100px"/>|<img src="https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg" height="100px"/>|<img src="https://www.styled-components.com/atom.png" height="100px"/>|
 
 </br>
@@ -26,12 +26,12 @@
 ## 페이지 캡쳐
 
 ### 메인 페이지
-<img width="320" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/5297e506-95c3-42ab-95f0-97f75dca4e0b"> <img width="320" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/c30e61f9-26b5-49b5-affb-9f51576d6155">
+<img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/5297e506-95c3-42ab-95f0-97f75dca4e0b"> <img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/c30e61f9-26b5-49b5-affb-9f51576d6155">
 
 </br>
 
 ### 상세 페이지
-<img width="320" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/1b591f9f-5fb4-4231-9303-18ae89270ca1"> <img width="320" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/a8486096-0453-451e-80c8-932f7393c8aa">
+<img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/1b591f9f-5fb4-4231-9303-18ae89270ca1"> <img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/a8486096-0453-451e-80c8-932f7393c8aa">
 
 
 </br>
