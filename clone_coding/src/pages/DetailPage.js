@@ -42,15 +42,24 @@ const DetailPage = () => {
             return "#de5d06";
         }
     };
-    console.log(ProductData[itemId].temp);
-    console.log(tColor(ProductData[itemId].temp));
     //매너온도 막대바 가로길이 계산
     const tWidth = (temp) => {
-        return `${(37 * temp) / 100}px`;
+        return `${temp}px`;
     };
-    console.log(tWidth(ProductData[itemId].temp));
     //매너온도 아이콘 지정
-    const tIcon = (temp) => {};
+    const tIcon = (temp) => {
+        if (temp <= 36.2) {
+            return t1;
+        } else if (temp <= 37.5) {
+            return t2;
+        } else if (temp <= 42) {
+            return t3;
+        } else if (temp <= 52) {
+            return t4;
+        } else {
+            return t5;
+        }
+    };
 
     const topScroll = () => {
         window.scrollTo(0, 0);
@@ -98,7 +107,7 @@ const DetailPage = () => {
                                     color: tColor(ProductData[itemId].temp),
                                 }}
                             >
-                                {ProductData[itemId].temp}
+                                {ProductData[itemId].temp}°C
                             </div>
                             <div className="underbar">
                                 <div
@@ -112,7 +121,11 @@ const DetailPage = () => {
                                 ></div>
                             </div>
                         </MannerBar>
-                        <img src={t1} width={30} height={30} />
+                        <img
+                            src={tIcon(ProductData[itemId].temp)}
+                            width={30}
+                            height={30}
+                        />
                     </MannerWrapper>
                 </SellerInfo>
                 <MannerText>

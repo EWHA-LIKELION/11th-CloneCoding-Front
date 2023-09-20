@@ -20,6 +20,18 @@ import p19 from "../images/p19.png";
 import p20 from "../images/p20.png";
 import p21 from "../images/p21.png";
 
+// import p1_1 from "../images/p1_1.png";
+// import p3_1 from "../images/p3_1.png";
+// import p3_2 from "../images/p3_2.png";
+// import p3_3 from "../images/p3_3.png";
+// import p3_4 from "../images/p3_4.png";
+// import p4_1 from "../images/p4_1.png";
+// import p5_1 from "../images/p5_1.png";
+// import p6_1 from "../images/p6_1.png";
+// import p6_2 from "../images/p6_2.png";
+// import p6_3 from "../images/p6_3.png";
+// import p6_4 from "../images/p6_4.png";
+
 export const ProductPhoto = [
     {
         id: 1,

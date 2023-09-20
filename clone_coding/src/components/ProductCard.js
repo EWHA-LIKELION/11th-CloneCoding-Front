@@ -9,11 +9,6 @@ import { ProductPhoto } from "../_mock/ProductPhoto";
 import { ProductData } from "../_mock/ProductData";
 
 const ProductCard = () => {
-    // const [item, setItem]=useState([]);
-    // useEffect(()=>{
-    //     const itemData=ProductData.find(item=>item.id===)
-    // })
-
     const navigate = useNavigate();
     const gotoDetail = () => {
         navigate("/detailpage");
@@ -25,7 +20,6 @@ const ProductCard = () => {
         <>
             <Wrapper>
                 <Container>
-                    {/* <img onClick={gotoDetail} src={p1} /> */}
                     {pImg.map((photo, id) => (
                         <Link
                             key={id}
