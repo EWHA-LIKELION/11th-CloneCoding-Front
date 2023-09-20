@@ -52,8 +52,6 @@ const ImageBox = ({ id, images }) => {
   //이미지가 1개일 경우 화살표 띄우지 않도록 조건 지정
   const hideBtn = images.length === 1;
 
-  console.log(images);
-
   return (
     <Wrapper>
       {!hideBtn && (
@@ -69,8 +67,16 @@ const ImageBox = ({ id, images }) => {
             </div>
           ))}
         </ImageSlider>
+        <ImageCnt>
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={currentIndex === index ? "active" : ""}
+              onClick={() => clickPagination(index)}
+            />
+          ))}
+        </ImageCnt>
       </ImageWrapper>
-      <ImageCnt></ImageCnt>
       {!hideBtn && (
         <NextBtn onClick={nextClick}>
           <img src={next} />
@@ -98,6 +104,8 @@ const BeforeBtn = styled.div`
 
 const ImageWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   width: 660px;
   height: 500px;
@@ -110,7 +118,6 @@ const ImageSlider = styled.div`
   width: 660px;
   height: 500px;
   border-radius: 10px;
-  /* overflow: hidden; */
   z-index: 20;
   div {
     display: flex;
@@ -125,9 +132,11 @@ const ImageSlider = styled.div`
 
 const ImageCnt = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   margin: auto;
   display: flex;
+  z-index: 30;
+  gap: 5px;
   div {
     width: 10px;
     height: 10px;
