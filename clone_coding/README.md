@@ -3,7 +3,7 @@
 이화여대 멋사 11기 프론트엔드 클론코딩 스터디
 <br/>
 
-## 📍프로젝트 소개
+## 프로젝트 소개
 
 당근마켓 클론코딩
 
@@ -20,7 +20,7 @@
 
 <br/>
 
-## 📍구현 기능
+## 구현 기능
 ### ✏️기능1
 상세 페이지 이미지 슬라이더<br/>
 사용 라이브러리: react-slick
@@ -34,7 +34,7 @@
 
 </br>
 
-## 📍페이지 캡쳐
+## 페이지 캡쳐
 
 ### ✏️메인 페이지
 <img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/5297e506-95c3-42ab-95f0-97f75dca4e0b"> <img width="500" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/c30e61f9-26b5-49b5-affb-9f51576d6155">
