@@ -1,6 +1,7 @@
 ## 11th-CloneCoding-Front
 
 이화여자대학교 멋쟁이사자처럼 11기 프론트엔트 클론코딩 스터디
+
 <br/>
 
 > #### 개발 기간
@@ -20,6 +21,7 @@
 ### 화면 캡쳐
 
 ![메인페이지 캡쳐](./src/assets/images/mainPage.png)
+![상세페이지 캡쳐](./src/assets/images/detailPage.png)
 
 <br/>
 
