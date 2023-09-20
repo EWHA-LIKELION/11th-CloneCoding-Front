@@ -37,18 +37,9 @@ const ImageSlide = ({ id, imgs }) => {
             </SlideButton>
         ),
         appendDots: (dots) => (
-            <div
-                style={{
-                    width: "40%",
-                    position: "absolute",
-                    bottom: "4px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-            >
+            <DotWrapper>
                 <ul>{dots}</ul>
-            </div>
+            </DotWrapper>
         ),
         dotsClass: "dots_custom",
     };
@@ -70,8 +61,9 @@ const StyledSlider = styled(Slider)`
     display: flex;
     width: 677px;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 10px;
     align-items: center;
+    margin-top: 85px;
 
     .slick-prev::before {
         opacity: 0;
@@ -82,10 +74,10 @@ const StyledSlider = styled(Slider)`
         display: none;
     }
     .slick-prev {
-        left: -40px;
+        left: -30px;
     }
     .slick-next {
-        right: -40px;
+        right: -30px;
     }
 
     .left:hover {
@@ -98,9 +90,45 @@ const StyledSlider = styled(Slider)`
 const ImgWrapper = styled.div`
     width: 677px;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     img {
         width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #000, #000 10%, transparent);
+    }
+`;
+const DotWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 3px;
+    border-radius: 10px;
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 6px;
+    }
+    li > button {
+        border: none;
+        height: 8px;
+        width: 8px;
+        border-radius: 100%;
+
+        background: #d1d1d1;
+        color: transparent;
+        cursor: pointer;
+
+        padding: 0;
+    }
+    li.slick-active button {
+        background-color: #ffffff;
     }
 `;

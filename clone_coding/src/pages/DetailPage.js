@@ -8,7 +8,7 @@ import PopularProduct from "../components/PopularProduct";
 import { ProductData } from "../_mock/ProductData";
 import { useParams } from "react-router-dom";
 
-import p1 from "../images/p1.png";
+// import p1 from "../images/p1.png";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import profileImg from "../images/profileImg.png";
@@ -21,6 +21,8 @@ import t3 from "../images/t3.png";
 import t4 from "../images/t4.png";
 import t5 from "../images/t5.png";
 import { ProductPhoto } from "../_mock/ProductPhoto";
+
+import ImageSlide from "../components/ImageSlide";
 
 const DetailPage = () => {
     const params = useParams();
@@ -72,7 +74,8 @@ const DetailPage = () => {
         <>
             <Wrapper>
                 <Header />
-                <PhotoWrapper>
+                <ImageSlide id={itemId} imgs={ProductData[itemId].imgs} />
+                {/* <PhotoWrapper>
                     <FaChevronLeft
                         className="left"
                         size="25"
@@ -86,7 +89,7 @@ const DetailPage = () => {
                         style={{ color: "#212529" }}
                         hoverStyle={{ color: "#e6e6e6" }}
                     />
-                </PhotoWrapper>
+                </PhotoWrapper> */}
                 <SellerInfo>
                     <ProfileWrapper>
                         <img src={profileImg} />
