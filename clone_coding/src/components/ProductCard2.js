@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //mock data
 import { ProductPhoto } from "../_mock/ProductPhoto";
@@ -19,21 +20,35 @@ const ProductCard2 = () => {
             <Wrapper>
                 <Container>
                     {pImg.slice(0, 6).map((photo, id) => (
-                        <div key={id}>
-                            <img
-                                src={photo}
-                                onClick={gotoDetail}
-                                style={{
-                                    width: "210px",
-                                    height: "210px",
-                                    borderRadius: "15px",
-                                }}
-                            />
-                            <div className="name">{ProductData[id].name}</div>
-                            <div className="price">{ProductData[id].price}</div>
-                            <div className="place">{ProductData[id].place}</div>
-                            <div className="cart">{ProductData[id].cart}</div>
-                        </div>
+                        <Link
+                            key={id}
+                            style={{ textDecoration: "none" }}
+                            to={`/detailpage/${id}`}
+                        >
+                            <div key={id}>
+                                <img
+                                    src={photo}
+                                    onClick={gotoDetail}
+                                    style={{
+                                        width: "210px",
+                                        height: "210px",
+                                        borderRadius: "15px",
+                                    }}
+                                />
+                                <div className="name">
+                                    {ProductData[id].name}
+                                </div>
+                                <div className="price">
+                                    {ProductData[id].price}
+                                </div>
+                                <div className="place">
+                                    {ProductData[id].place}
+                                </div>
+                                <div className="cart">
+                                    {ProductData[id].cart}
+                                </div>
+                            </div>
+                        </Link>
                     ))}
                 </Container>
             </Wrapper>
