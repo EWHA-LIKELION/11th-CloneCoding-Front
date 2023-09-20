@@ -11,10 +11,10 @@ export const ProfileMock = [
   defaultImg,
   img5,
   defaultImg,
-  img2,
+  img4,
   img5,
   defaultImg,
-  img4,
+  img2,
   defaultImg,
   img6, //10
   defaultImg,
