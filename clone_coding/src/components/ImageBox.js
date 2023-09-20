@@ -110,7 +110,7 @@ const ImageSlider = styled.div`
   width: 660px;
   height: 500px;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 20;
   div {
     display: flex;
@@ -128,7 +128,7 @@ const ImageCnt = styled.div`
   bottom: 10px;
   margin: auto;
   display: flex;
-  button {
+  div {
     width: 10px;
     height: 10px;
     border-radius: 20px;
