@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { PhotoMock } from "../mockdata/PhotoMock";
 import { ContentMock } from "../mockdata/ContentMock";
 import { Link } from "react-router-dom";
 
 const HotItem = () => {
-  const mainImg = PhotoMock.map((item) => item.mainImg);
+  const [randomItems, setRandomItems] = useState([]);
 
-  const shuffledArray = [...mainImg];
+  useEffect(() => {
+    const photoData = [...PhotoMock];
 
-  // 배열 랜덤하게 섞기
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-  }
+    // 데이터 랜덤 배열
+    for (let i = photoData.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [photoData[i], photoData[j]] = [photoData[j], photoData[i]];
+    }
 
-  // 랜덤하게 선택한 6개 가져오기
-  const randomPhotos = shuffledArray.slice(0, 6);
+    const randomImg = photoData.slice(0, 6);
+
+    // 이미지랑 설명 id 일치시키기
+    const matchedData = randomImg.map((img) => {
+      const randomContent = ContentMock.find((item) => item.id === img.id);
+      return {
+        id: img.id,
+        title: randomContent.title,
+        address: randomContent.address,
+        price: randomContent.price,
+        likes: randomContent.likes,
+        chats: randomContent.chats,
+        mainImg: img.mainImg,
+      };
+    });
+
+    setRandomItems(matchedData);
+  }, []);
 
   return (
     <Wrapper>
       <ProductGrid>
-        {randomPhotos.map((photo, id) => (
-          <div key={id} style={{ marginBottom: "20px" }}>
-            <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
-              <img src={photo} alt={`Image ${id}`} />
+        {randomItems.map((data) => (
+          <div key={data.id} style={{ marginBottom: "20px" }}>
+            <Link to={`/detail/${data.id}`} style={{ textDecoration: "none" }}>
+              <img src={data.mainImg} alt={`Image ${data.id}`} />
               <Text>
-                <p style={{ fontSize: "16px" }}>{ContentMock[id].title}</p>
+                <p style={{ fontSize: "16px" }}>{data.title}</p>
                 <p
                   style={{
                     fontSize: "15px",
@@ -34,7 +51,7 @@ const HotItem = () => {
                     marginTop: "-7px",
                   }}
                 >
-                  {ContentMock[id].price}원
+                  {data.price}원
                 </p>
                 <p
                   style={{
@@ -43,13 +60,11 @@ const HotItem = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  {ContentMock[id].address}
+                  {data.address}
                 </p>
-                <span style={{ fontSize: "13px" }}>
-                  관심 {ContentMock[id].likes} ·
-                </span>
+                <span style={{ fontSize: "13px" }}>관심 {data.likes} ·</span>
                 <span style={{ fontSize: "13px", marginLeft: "5px" }}>
-                  채팅 {ContentMock[id].chats}
+                  채팅 {data.chats}
                 </span>
               </Text>
             </Link>
@@ -65,7 +80,7 @@ export default HotItem;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-randomcontent: center;
   align-items: center;
 `;
 

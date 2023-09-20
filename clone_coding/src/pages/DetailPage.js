@@ -125,27 +125,42 @@ const DetailPage = () => {
                 borderRadius: "100%",
                 marginTop: "10px",
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
               <div
                 style={{
-                  width: "4px",
-                  height: "5px",
-                  backgroundColor: `${TempColor}`,
-                  borderRadius: "100%",
-                  marginTop: "8px",
-                  marginLeft: "4px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  gap: "5px",
                 }}
-              />
+              >
+                <div
+                  style={{
+                    width: "3px",
+                    height: "4px",
+                    backgroundColor: `${TempColor}`,
+                    borderRadius: "50%",
+                    marginTop: "8px",
+                  }}
+                />
+                <div
+                  style={{
+                    width: "3px",
+                    height: "4px",
+                    backgroundColor: `${TempColor}`,
+                    borderRadius: "50%",
+                    marginTop: "8px",
+                  }}
+                />
+              </div>
               <div
                 style={{
-                  width: "4px",
-                  height: "5px",
-                  backgroundColor: `${TempColor}`,
-                  borderRadius: "100%",
-                  marginTop: "8px",
-                  marginLeft: "8px",
+                  width: "8px",
+                  marginTop: "4px",
+                  borderBottom: `2px solid ${TempColor}`,
                 }}
               />
             </div>

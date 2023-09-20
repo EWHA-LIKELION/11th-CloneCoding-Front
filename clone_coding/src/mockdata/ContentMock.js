@@ -30,7 +30,7 @@ export const ContentMock = [
   },
   {
     id: 2,
-    title: "샤인머스켓",
+    title: "샤인머스캣",
     price: "9000",
     address: "서울 서초구 서초1동",
     likes: "2",
