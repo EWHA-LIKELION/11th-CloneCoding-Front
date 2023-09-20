@@ -72,7 +72,6 @@ const ImageBox = ({ id, images }) => {
             <div
               key={index}
               className={currentIndex === index ? "active" : ""}
-              onClick={() => clickPagination(index)}
             />
           ))}
         </ImageCnt>
@@ -138,8 +137,8 @@ const ImageCnt = styled.div`
   z-index: 30;
   gap: 5px;
   div {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 20px;
     background-color: #fff;
     opacity: 0.3;
