@@ -16,6 +16,25 @@ const ImageSlide = ({ id, imgs }) => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+
+        responsive: [
+            // 반응형 웹 구현 옵션
+            {
+                breakpoint: 960, //화면 사이즈 960px일 때
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 768, //화면 사이즈 768px일 때
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 2,
+                },
+            },
+        ],
+
         nextArrow: (
             <SlideButton>
                 <FaChevronRight
@@ -92,10 +111,10 @@ const ImgWrapper = styled.div`
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
+    background: linear-gradient(to bottom, #000, #000 30%, transparent);
     img {
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, #000, #000 10%, transparent);
     }
 `;
 const DotWrapper = styled.div`
@@ -105,7 +124,7 @@ const DotWrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 3px;
+    bottom: 2px;
     border-radius: 10px;
     ul {
         padding: 0;
@@ -125,7 +144,6 @@ const DotWrapper = styled.div`
         background: #d1d1d1;
         color: transparent;
         cursor: pointer;
-
         padding: 0;
     }
     li.slick-active button {
