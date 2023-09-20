@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import ProductCard2 from "./ProductCard2";
-import productData from "../_mock/productData";
+import { ProductData } from "../_mock/ProductData";
 
 const PopularProduct = () => {
     return (
@@ -13,7 +13,7 @@ const PopularProduct = () => {
                     <div className="more">더 구경하기</div>
                 </PopularTitle>
                 <CardContainer>
-                    {productData.map((product) => (
+                    {ProductData.map((product) => (
                         <ProductCard2 id={product.id} productData={product} />
                     ))}
                 </CardContainer>

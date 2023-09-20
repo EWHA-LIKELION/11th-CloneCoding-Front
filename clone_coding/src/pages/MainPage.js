@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductCard from "../components/ProductCard";
-import productData from "../_mock/productData";
+import productData from "../_mock/ProductData";
 
 const MainPage = () => {
     return (
@@ -14,9 +14,10 @@ const MainPage = () => {
                 <Banner />
                 <div className="mainTitle">중고거래 인기매물</div>
                 <Container>
-                    {productData.map((product) => (
+                    {/* {productData.map((product) => (
                         <ProductCard id={product.id} productData={product} />
-                    ))}
+                    ))} */}
+                    <ProductCard />
                 </Container>
             </Wrapper>
         </>

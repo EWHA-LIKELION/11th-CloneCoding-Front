@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import PopularProduct from "../components/PopularProduct";
 
 import ProductCard from "../components/ProductCard";
-import productData from "../_mock/productData";
+import productData from "../_mock/ProductData";
 
 import p1 from "../images/p1.png";
 import { FaChevronLeft } from "react-icons/fa";
@@ -12,12 +12,12 @@ import { FaChevronRight } from "react-icons/fa";
 import profileImg from "../images/profileImg.png";
 
 //매너온도 이미지
-import t0 from "../images/t2.png";
+import t0 from "../images/t0.png";
 import t1 from "../images/t1.png";
 import t2 from "../images/t2.png";
-import t3 from "../images/t1.png";
-import t4 from "../images/t2.png";
-import t5 from "../images/t2.png";
+import t3 from "../images/t3.png";
+import t4 from "../images/t4.png";
+import t5 from "../images/t5.png";
 
 const DetailPage = () => {
     return (
