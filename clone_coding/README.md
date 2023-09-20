@@ -15,11 +15,9 @@
 ### 기술 스택
 
 |JavaScript|React|Styled-Components|
-|------|---|---|
-|<img src="https://w7.pngwing.com/pngs/172/554/png-transparent-javascript-html-computer-software-web-browser-watermark-angle-text-rectangle.png" height="50px"/>|<img src="https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg" height="50px"/>|<img src="https://www.styled-components.com/atom.png" height="50px"/>|
+|----------|-----|-----------------|
+|<img src="https://w7.pngwing.com/pngs/172/554/png-transparent-javascript-html-computer-software-web-browser-watermark-angle-text-rectangle.png" height="100px"/>|<img src="https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg" height="100px"/>|<img src="https://www.styled-components.com/atom.png" height="100px"/>|
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" height="28px"/>
-<img src="https://img.shields.io/badge/styled_components-DB7093?style=flat-square&logo=styled-components&logoColor=white" height="28px"/>
 </br>
 
 ### 구현 기능
