@@ -1,6 +1,7 @@
 ## 11th-CloneCoding-Front
 
 이화여자대학교 멋쟁이사자처럼 11기 프론트엔트 클론코딩 스터디
+<br/>
 
 > #### 개발 기간
 >
@@ -21,6 +22,33 @@
 <br/>
 
 ### 폴더 구조
+
+```
+📦clone_coding
+ ┣ 📂node_modules
+ ┣ 📂public
+ ┃ ┗ 📜index.html
+ ┣ 📂src
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂icons
+ ┃ ┃ ┗ 📂images
+ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📜Banner.js
+ ┃ ┃ ┣ 📜ImageBox.js
+ ┃ ┃ ┣ 📜ItemBox.js
+ ┃ ┃ ┗ 📜TopBar.js
+ ┃ ┣ 📂database
+ ┃ ┃ ┗ 📜itemData.js
+ ┃ ┣ 📂pages
+ ┃ ┃ ┣ 📜DetailPage.js
+ ┃ ┃ ┗ 📜MainPage.js
+ ┃ ┣ 📜App.js
+ ┃ ┗ 📜index.js
+ ┣ 📜.gitignore
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┗ 📜README.md
+```
 
 <br/>
 
