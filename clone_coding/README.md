@@ -19,6 +19,8 @@
 
 ### 화면 캡쳐
 
+![메인페이지 캡쳐](./src/assets/images/mainPage.png)
+
 <br/>
 
 ### 폴더 구조
