@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PopularProduct from "../components/PopularProduct";
@@ -28,24 +28,36 @@ const DetailPage = () => {
     //해당 이미지 추출
     const selectedPhoto = ProductPhoto.find((photo) => photo.id === itemId + 1);
 
-    // //매너온도 색상 지정
-    // const tColor = (temp) => {
-    //     if (temp <= 34) {
-    //         return "#0B3861";
-    //     } else if (temp <= 36.2) {
-    //         return "#0d3a65";
-    //     } else if (temp <= 37.5) {
-    //         return "#1561a9";
-    //     } else if (temp <= 42) {
-    //         return "#319e45";
-    //     } else if (temp <= 52) {
-    //         return "#df9100";
-    //     } else {
-    //         return "#de5d06";
-    //     }
-    // };
-    // //매너온도 아이콘 지정
-    // const tIcon = (temp) => {};
+    //매너온도 색상 지정
+    const tColor = (temp) => {
+        if (temp <= 36.2) {
+            return "#0d3a65";
+        } else if (temp <= 37.5) {
+            return "#1561a9";
+        } else if (temp <= 42) {
+            return "#319e45";
+        } else if (temp <= 52) {
+            return "#df9100";
+        } else {
+            return "#de5d06";
+        }
+    };
+    console.log(ProductData[itemId].temp);
+    console.log(tColor(ProductData[itemId].temp));
+    //매너온도 막대바 가로길이 계산
+    const tWidth = (temp) => {
+        return `${(37 * temp) / 100}px`;
+    };
+    console.log(tWidth(ProductData[itemId].temp));
+    //매너온도 아이콘 지정
+    const tIcon = (temp) => {};
+
+    const topScroll = () => {
+        window.scrollTo(0, 0);
+    };
+    useEffect(() => {
+        topScroll();
+    }, [itemId]);
 
     return (
         <>
@@ -80,11 +92,24 @@ const DetailPage = () => {
                     </ProfileWrapper>
                     <MannerWrapper>
                         <MannerBar>
-                            <div className="temp">
+                            <div
+                                className="temp"
+                                style={{
+                                    color: tColor(ProductData[itemId].temp),
+                                }}
+                            >
                                 {ProductData[itemId].temp}
                             </div>
                             <div className="underbar">
-                                <div className="tempbar"></div>
+                                <div
+                                    className="tempbar"
+                                    style={{
+                                        backgroundColor: tColor(
+                                            ProductData[itemId].temp
+                                        ),
+                                        width: tWidth(ProductData[itemId].temp),
+                                    }}
+                                ></div>
                             </div>
                         </MannerBar>
                         <img src={t1} width={30} height={30} />
@@ -181,7 +206,6 @@ const MannerBar = styled.div`
         align-self: flex-end;
         font-size: 15px;
         font-weight: 600;
-        color: #1561a9;
         margin-bottom: 7px;
     }
     .underbar {
@@ -189,9 +213,7 @@ const MannerBar = styled.div`
         height: 4px;
         background-color: #e9ecef;
         .tempbar {
-            width: 37px;
             height: 4px;
-            background-color: #1561a9;
         }
     }
 `;
