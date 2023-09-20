@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductCard from "../components/ProductCard";
-import productData from "../_mock/ProductData";
 
 const MainPage = () => {
     return (
@@ -13,12 +12,7 @@ const MainPage = () => {
                 <Header />
                 <Banner />
                 <div className="mainTitle">중고거래 인기매물</div>
-                <Container>
-                    {/* {productData.map((product) => (
-                        <ProductCard id={product.id} productData={product} />
-                    ))} */}
-                    <ProductCard />
-                </Container>
+                <ProductCard />
             </Wrapper>
         </>
     );
@@ -38,14 +32,4 @@ const Wrapper = styled.div`
         color: #212529;
         font-weight: 600;
     }
-`;
-const Container = styled.div`
-    position: relative;
-    top: 480px;
-    width: 757px;
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
 `;

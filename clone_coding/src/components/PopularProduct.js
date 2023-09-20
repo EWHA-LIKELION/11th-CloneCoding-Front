@@ -12,11 +12,7 @@ const PopularProduct = () => {
                     <div className="title">당근 인기중고</div>
                     <div className="more">더 구경하기</div>
                 </PopularTitle>
-                <CardContainer>
-                    {ProductData.map((product) => (
-                        <ProductCard2 id={product.id} productData={product} />
-                    ))}
-                </CardContainer>
+                <ProductCard2 />
             </Wrapper>
         </>
     );
@@ -44,13 +40,4 @@ const PopularTitle = styled.div`
         font-size: 15px;
         color: #ff8a3d;
     }
-`;
-const CardContainer = styled.div`
-    position: relative;
-    width: 677px;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
 `;
