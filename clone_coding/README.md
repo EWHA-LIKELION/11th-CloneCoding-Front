@@ -16,7 +16,7 @@
 
 |    JavaScript   |       React     |Styled-Components|
 |-----------------|-----------------|-----------------|
-|<img src="https://w7.pngwing.com/pngs/172/554/png-transparent-javascript-html-computer-software-web-browser-watermark-angle-text-rectangle.png" height="120px"/>|<img src="https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg" height="120px"/>|<img src="https://www.styled-components.com/atom.png" height="120px" align="center"/>|
+|<img src="https://w7.pngwing.com/pngs/172/554/png-transparent-javascript-html-computer-software-web-browser-watermark-angle-text-rectangle.png" height="120px"/>|<img src="https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg" height="120px"/>|<p align="center"><img src="https://www.styled-components.com/atom.png" height="120px"/></p>|
 
 </br>
 
