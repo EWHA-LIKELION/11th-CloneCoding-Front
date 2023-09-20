@@ -1,44 +1,41 @@
-## 11th CloneCoding Front
+# 11th CloneCoding Front
+
+이화여대 멋사 11기 프론트엔드 클론코딩 스터디
+</br>
+
+## 프로젝트 소개
 
 당근마켓 클론코딩
 
 ### 개발 기간
 
 2023.09.10~2023.09.21
+</br>
 
 ### 기술 스택
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" height="28px"/>
 <img src="https://img.shields.io/badge/styled_components-DB7093?style=flat-square&logo=styled-components&logoColor=white" height="28px"/>
+</br>
 
-### 폴더 구조 및 페이지 구성
-
-📂 public <br/>
-⎪ └─ index.html <br/>
-📂 src <br/>
-├─ 📂 _mock <br/>
-⎪ ⎪ └─ productData.js            ▶︎ 상품의 목데이터 배열 <br/>
-├─ 📂 components <br/>
-⎪ ⎪ └─ Header.js                 ▶︎ 상단 네비 바 <br/>
-⎪ ⎪ └─ Banner.js                 ▶︎ 제목과 부제목, 이미지가 들어간 배너 <br/>
-⎪ ⎪ └─ ImageSlide.js             ▶︎ 상세페이지에서 띄우는 이미지 슬라이더 <br/>
-⎪ ⎪ └─ ProductCard.js            ▶︎ 메인페이지에서 띄우는 중고거래 상품 <br/>
-⎪ ⎪ └─ ProductCard2.js           ▶︎ 상세페이지에서 띄우는 인기거래 상품 <br/>
-⎪ ⎪ └─ PopularProduct.js         ▶︎ ProductCard2가 포함된 인기상품 목록 <br/>
-├─ 📂 images //아이콘, 상품 이미지 <br/>
-⎪ <br/>
-├─ 📂 pages <br/>
-⎪ ⎪ └─ MainPage.js               ▶︎ 중고거래 메인페이지 <br/>
-⎪ ⎪ └─ DetailPage.js             ▶︎ 중고거래 상세내페이지 <br/>
-├─ App.js <br/>
-├─ index.js <br/>
-├─ .gitignore <br/>
-├─ package.json <br/>
-└─ README.md <br/>
-
+### 구현 기능
+</br>
 
 ### 페이지 캡쳐
 
+#### 메인 페이지
+<img width="1280" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/5297e506-95c3-42ab-95f0-97f75dca4e0b">
+</br>
+<img width="1280" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/c30e61f9-26b5-49b5-affb-9f51576d6155">
+
+#### 상세 페이지
+<img width="1280" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/1b591f9f-5fb4-4231-9303-18ae89270ca1">
+</br>
+<img width="1280" alt="image" src="https://github.com/JiwonChoi0805/11th-CloneCoding-Front/assets/126451052/a8486096-0453-451e-80c8-932f7393c8aa">
+
+
+
+</br>
 
 ### Installation
 ```
