@@ -113,7 +113,7 @@ const Input = styled.input`
   font-size: 16px;
   color: #212529;
   text-align: start;
-  cursor: pointer;
+  cursor: auto;
 `;
 
 const DeleteBtn = styled.div`
@@ -125,6 +125,8 @@ const DeleteBtn = styled.div`
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  cursor: pointer;
+
   img {
     width: 16px;
     height: 16px;

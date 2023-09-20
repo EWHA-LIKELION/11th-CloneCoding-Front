@@ -124,8 +124,31 @@ const DetailPage = () => {
                 border: `2px solid ${TempColor}`,
                 borderRadius: "100%",
                 marginTop: "10px",
+                display: "flex",
+                flexDirection: "row",
               }}
-            />
+            >
+              <div
+                style={{
+                  width: "4px",
+                  height: "5px",
+                  backgroundColor: `${TempColor}`,
+                  borderRadius: "100%",
+                  marginTop: "8px",
+                  marginLeft: "4px",
+                }}
+              />
+              <div
+                style={{
+                  width: "4px",
+                  height: "5px",
+                  backgroundColor: `${TempColor}`,
+                  borderRadius: "100%",
+                  marginTop: "8px",
+                  marginLeft: "8px",
+                }}
+              />
+            </div>
           </Temp>
           <p style={{ textAlign: "right" }}>매너온도</p>
         </Manner>

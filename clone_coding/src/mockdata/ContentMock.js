@@ -67,7 +67,7 @@ export const ContentMock = [
     category: "여성의류",
     time: "2달 전",
     views: "200",
-    explain: "1년 정도 신었어요.",
+    explain: "1년 정도 신었어요. 직거래 선호합니다.",
     username: "규빈임당",
   },
   {
@@ -81,7 +81,7 @@ export const ContentMock = [
     category: "뷰티/미용",
     time: "5시간 전",
     views: "200",
-    explain: "선물 받았는데 필요 없어서 팝니다. 효과 좋은 듯요~^^",
+    explain: "선물 받았는데 필요 없어서 팝니다. 효과 좋은 듯요^^",
     username: "규빈",
   },
   {
