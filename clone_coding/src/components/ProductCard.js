@@ -2,11 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 //mock data
 import { ProductPhoto } from "../_mock/ProductPhoto";
 import { ProductData } from "../_mock/ProductData";
 
 const ProductCard = () => {
+    // const [item, setItem]=useState([]);
+    // useEffect(()=>{
+    //     const itemData=ProductData.find(item=>item.id===)
+    // })
+
     const navigate = useNavigate();
     const gotoDetail = () => {
         navigate("/detailpage");
@@ -20,21 +27,35 @@ const ProductCard = () => {
                 <Container>
                     {/* <img onClick={gotoDetail} src={p1} /> */}
                     {pImg.map((photo, id) => (
-                        <div key={id}>
-                            <img
-                                src={photo}
-                                onClick={gotoDetail}
-                                style={{
-                                    width: "223px",
-                                    height: "223px",
-                                    borderRadius: "15px",
-                                }}
-                            />
-                            <div className="name">{ProductData[id].name}</div>
-                            <div className="price">{ProductData[id].price}</div>
-                            <div className="place">{ProductData[id].place}</div>
-                            <div className="cart">{ProductData[id].cart}</div>
-                        </div>
+                        <Link
+                            key={id}
+                            style={{ textDecoration: "none" }}
+                            to={`/detailpage/${id}`}
+                        >
+                            <div key={id}>
+                                <img
+                                    src={photo}
+                                    onClick={gotoDetail}
+                                    style={{
+                                        width: "223px",
+                                        height: "223px",
+                                        borderRadius: "15px",
+                                    }}
+                                />
+                                <div className="name">
+                                    {ProductData[id].name}
+                                </div>
+                                <div className="price">
+                                    {ProductData[id].price}
+                                </div>
+                                <div className="place">
+                                    {ProductData[id].place}
+                                </div>
+                                <div className="cart">
+                                    {ProductData[id].cart}
+                                </div>
+                            </div>
+                        </Link>
                     ))}
                 </Container>
             </Wrapper>
@@ -50,7 +71,7 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
     position: relative;
-
+    top: 470px;
     width: 757px;
     height: 100%;
 

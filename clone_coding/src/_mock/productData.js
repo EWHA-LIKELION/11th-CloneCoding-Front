@@ -81,7 +81,7 @@ export const ProductData = [
         place: "청주시 흥덕구 봉명2.송정동",
         cart: "관심 7 ∙ 채팅 16",
         sellerName: "황소",
-        temp: "36.9°C",
+        temp: "20.1°C",
         category: "기타 중고물품 ∙ 13시간 전",
         detail: `2-3년 사용하지안아 시동이 안됨, 반품안됨니다, 네고없슴니다,
         봉명동 543-13 으로
@@ -95,7 +95,7 @@ export const ProductData = [
         place: "강서구 등촌제2동",
         cart: "관심 1 ∙ 채팅 13",
         sellerName: "is",
-        temp: "36.5°C",
+        temp: "30.5°C",
         category: "티켓/교환권 ∙ 5일 전",
         detail: `등촌역 7~8번출구에서 거래합니다`,
         interest: "관심 1 ∙ 채팅 13 ∙ 조회 302",

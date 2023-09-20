@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PopularProduct from "../components/PopularProduct";
 
-import ProductCard from "../components/ProductCard";
-import productData from "../_mock/ProductData";
+// import ProductCard from "../components/ProductCard";
+import { ProductData } from "../_mock/ProductData";
+import { useParams } from "react-router-dom";
 
 import p1 from "../images/p1.png";
 import { FaChevronLeft } from "react-icons/fa";
@@ -18,8 +20,33 @@ import t2 from "../images/t2.png";
 import t3 from "../images/t3.png";
 import t4 from "../images/t4.png";
 import t5 from "../images/t5.png";
+import { ProductPhoto } from "../_mock/ProductPhoto";
 
 const DetailPage = () => {
+    const params = useParams();
+    const itemId = parseInt(params.id, 10);
+    //해당 이미지 추출
+    const selectedPhoto = ProductPhoto.find((photo) => photo.id === itemId + 1);
+
+    // //매너온도 색상 지정
+    // const tColor = (temp) => {
+    //     if (temp <= 34) {
+    //         return "#0B3861";
+    //     } else if (temp <= 36.2) {
+    //         return "#0d3a65";
+    //     } else if (temp <= 37.5) {
+    //         return "#1561a9";
+    //     } else if (temp <= 42) {
+    //         return "#319e45";
+    //     } else if (temp <= 52) {
+    //         return "#df9100";
+    //     } else {
+    //         return "#de5d06";
+    //     }
+    // };
+    // //매너온도 아이콘 지정
+    // const tIcon = (temp) => {};
+
     return (
         <>
             <Wrapper>
@@ -31,7 +58,7 @@ const DetailPage = () => {
                         style={{ color: "#212529" }}
                         hoverStyle={{ color: "#e6e6e6" }}
                     />
-                    <img src={p1} />
+                    <img src={selectedPhoto ? selectedPhoto.img : ""} />
                     <FaChevronRight
                         className="right"
                         size="25"
@@ -43,15 +70,19 @@ const DetailPage = () => {
                     <ProfileWrapper>
                         <img src={profileImg} />
                         <div>
-                            <div className="sellerName">우진우빈파더</div>
+                            <div className="sellerName">
+                                {ProductData[itemId].sellerName}
+                            </div>
                             <div className="sellerPlace">
-                                수원시 영통구 망포동
+                                {ProductData[itemId].place}
                             </div>
                         </div>
                     </ProfileWrapper>
                     <MannerWrapper>
                         <MannerBar>
-                            <div className="temp">36.8°C</div>
+                            <div className="temp">
+                                {ProductData[itemId].temp}
+                            </div>
                             <div className="underbar">
                                 <div className="tempbar"></div>
                             </div>
@@ -64,16 +95,14 @@ const DetailPage = () => {
                 </MannerText>
                 <ProductInfo>
                     <hr />
-                    <div className="title">아내가 제 아이패드 팔아서</div>
-                    <div className="category">기타 중고물품 ∙ 3일전</div>
-                    <div className="price">700,000원</div>
-                    <div className="detail">
-                        진품은 맞고요 얼마인지는 모르겠고 아내가 제 아이패드
-                        마음대로 팔아서 저도 똑같이 샤넬백 팝니다. 다시
-                        돌려달라고 안할거고요 아내도요.
+                    <div className="title">{ProductData[itemId].name}</div>
+                    <div className="category">
+                        {ProductData[itemId].category}
                     </div>
+                    <div className="price">{ProductData[itemId].price}원</div>
+                    <div className="detail">{ProductData[itemId].detail}</div>
                     <div className="interest">
-                        관심 86 ∙ 채팅 105 ∙ 조회 3260
+                        {ProductData[itemId].interest}
                     </div>
                     <hr />
                 </ProductInfo>
