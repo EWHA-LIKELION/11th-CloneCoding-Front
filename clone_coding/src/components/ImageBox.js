@@ -64,7 +64,9 @@ const ImageBox = ({ id, images }) => {
       <ImageWrapper>
         <ImageSlider ref={slideRef}>
           {images.map((image) => (
-            <img src={image} />
+            <div>
+              <img src={image} />
+            </div>
           ))}
         </ImageSlider>
       </ImageWrapper>
@@ -104,12 +106,15 @@ const ImageWrapper = styled.div`
 `;
 
 const ImageSlider = styled.div`
-  float: left;
+  display: flex;
   width: 660px;
   height: 500px;
   border-radius: 10px;
   overflow: hidden;
   z-index: 20;
+  div {
+    display: flex;
+  }
   img {
     width: 660px;
     height: 500px;
