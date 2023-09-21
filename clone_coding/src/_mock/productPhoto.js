@@ -19,15 +19,6 @@ import p18 from "../images/p18.png";
 import p19 from "../images/p19.png";
 import p20 from "../images/p20.png";
 import p21 from "../images/p21.png";
-import p22 from "../images/p22.png";
-import p23 from "../images/p23.png";
-import p24 from "../images/p24.png";
-import p25 from "../images/p25.png";
-import p26 from "../images/p26.png";
-import p27 from "../images/p27.png";
-import p28 from "../images/p28.png";
-import p29 from "../images/p29.png";
-import p30 from "../images/p30.png";
 
 // import p1_1 from "../images/p1_1.png";
 // import p3_1 from "../images/p3_1.png";
@@ -125,41 +116,5 @@ export const ProductPhoto = [
     {
         id: 21,
         img: p21,
-    },
-    {
-        id: 22,
-        img: p22,
-    },
-    {
-        id: 23,
-        img: p23,
-    },
-    {
-        id: 24,
-        img: p24,
-    },
-    {
-        id: 25,
-        img: p25,
-    },
-    {
-        id: 26,
-        img: p26,
-    },
-    {
-        id: 27,
-        img: p27,
-    },
-    {
-        id: 28,
-        img: p28,
-    },
-    {
-        id: 29,
-        img: p29,
-    },
-    {
-        id: 30,
-        img: p30,
     },
 ];

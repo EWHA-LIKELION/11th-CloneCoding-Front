@@ -1,13 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+
 import mainlogo from "../images/mainlogo.png";
 
 const Header = () => {
-    const navigate = useNavigate();
-    const gotoMain = () => {
-        navigate("/");
-    };
     return (
         <>
             <Wrapper>
@@ -16,11 +12,7 @@ const Header = () => {
                         <img src={mainlogo} />
                     </Logo>
                     <Menus>
-                        <div
-                            className="menu"
-                            onClick={gotoMain}
-                            style={{ color: "#ff6f0f" }}
-                        >
+                        <div className="menu" style={{ color: "#ff6f0f" }}>
                             중고거래
                         </div>
                         <div className="menu">동네가게</div>
