@@ -30,7 +30,7 @@
 <br/>
 ### ✏️기능2
 상품별 상세페이지 이동<br/>
-사용 라이브러리: react-router-dom 의 {Link} import
+사용 라이브러리: react-router-dom 의 내장 컴포넌트 {Link}, 내장 hooks useParams
 <br/>
 ### ✏️기능3
 매너온도별 아이콘 및 막대바(색, 길이) 변경
