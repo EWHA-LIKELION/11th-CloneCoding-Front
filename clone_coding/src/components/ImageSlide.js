@@ -17,23 +17,23 @@ const ImageSlide = ({ id, imgs }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
 
-        responsive: [
-            // 반응형 웹 구현 옵션
-            {
-                breakpoint: 960, //화면 사이즈 960px일 때
-                settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
-                    slidesToShow: 3,
-                },
-            },
-            {
-                breakpoint: 768, //화면 사이즈 768px일 때
-                settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
-                    slidesToShow: 2,
-                },
-            },
-        ],
+        // responsive: [
+        //     // 반응형 웹 구현 옵션
+        //     {
+        //         breakpoint: 960, //화면 사이즈 960px일 때
+        //         settings: {
+        //             //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+        //             slidesToShow: 3,
+        //         },
+        //     },
+        //     {
+        //         breakpoint: 768, //화면 사이즈 768px일 때
+        //         settings: {
+        //             //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+        //             slidesToShow: 2,
+        //         },
+        //     },
+        // ],
 
         nextArrow: (
             <SlideButton>
@@ -84,6 +84,8 @@ const StyledSlider = styled(Slider)`
     align-items: center;
     margin-top: 85px;
 
+    flex-direction: row;
+
     .slick-prev::before {
         opacity: 0;
         display: none;
@@ -111,11 +113,13 @@ const ImgWrapper = styled.div`
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
-    background: linear-gradient(to bottom, #000, #000 30%, transparent);
+    background: linear-gradient(to top, #000, #000 10%, transparent);
     img {
         width: 100%;
         height: 100%;
     }
+    display: flex;
+    flex-direction: row;
 `;
 const DotWrapper = styled.div`
     width: 100%;
