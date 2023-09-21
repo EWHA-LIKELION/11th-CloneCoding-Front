@@ -74,7 +74,10 @@ const DetailPage = () => {
                 <div id="bar">
                   <div
                     id="current"
-                    style={{ background: tempColor(itemData.temp) }}
+                    style={{
+                      width: `${itemData.temp}px`,
+                      background: tempColor(itemData.temp),
+                    }}
                   ></div>
                 </div>
               </TempBar>
@@ -187,7 +190,7 @@ const TempBar = styled.div`
   }
   #current {
     position: absolute;
-    width: 41px;
+    /* width: 41px;  */
     height: 4px;
     border-radius: 4px;
     z-index: 10;
